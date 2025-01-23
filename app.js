@@ -1,8 +1,21 @@
-//Adicionar nomes: Os usuários escreverão o nome de um amigo em um campo de texto e o adicionarão a uma lista visível ao clicar em "Adicionar".
+listaAmigos = [];
 
-//Validar entrada: Se o campo de texto estiver vazio, o programa exibirá um alerta solicitando um nome válido.
+function adicionarAmigo() {
+    let amigo = document.querySelector('input').value;
+    if (amigo == '') {
+        alert('Escolha um nome válido.')
+    } else {
+        listaAmigos.push(amigo);
+        console.log(amigo);
+        console.log(listaAmigos);
+        exibirNomeNaLista('ul', amigo);
+    }
+} 
 
-//Visualizar a lista: Os nomes inseridos aparecerão em uma lista abaixo do campo de entrada.
+function exibirNomeNaLista(tag, texto) {
+    let campo = document.querySelector(tag);
+    campo.innerHTML += `<ul>${texto}</ul>`;
+}
 
 //Sorteio aleatório: Ao clicar no botão "Sortear Amigo", um nome da lista será selecionado aleatoriamente e exibido na página.
 
